@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.domain
+package create.develop.planetsdemo.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

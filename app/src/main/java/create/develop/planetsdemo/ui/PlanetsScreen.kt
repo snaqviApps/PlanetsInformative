@@ -1,12 +1,9 @@
 package create.develop.planetsdemo.ui
 
-import android.R
-import android.R.attr.shape
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.rememberTransformableState
 import androidx.compose.foundation.gestures.transformable
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -16,7 +13,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,8 +28,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Green
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -43,7 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import create.develop.planetsdemo.data.Planets
-import create.develop.planetsdemo.domain.MainViewModel
+import create.develop.planetsdemo.presentation.MainViewModel
 
 @Composable
 fun PlanetsScreen(
@@ -62,17 +56,7 @@ fun PlanetsScreenContent(
     modifier: Modifier = Modifier,
     listOfPlanets: List<Planets>
 ) {
-//  set up all transformation states, for possible Zoom and other functionalities
-    var scale by remember { mutableFloatStateOf(1f) }
-    var rotation by remember { mutableFloatStateOf(0f) }
-    var offset by remember { mutableStateOf(Offset.Zero) }
-    val state = rememberTransformableState { zoomChange, offsetChange, rotationChange ->
-        scale *= zoomChange
-        rotation += rotationChange
-        offset += offsetChange
-    }
 
-//    Box(
     Card(
         modifier
             .padding(
@@ -94,12 +78,11 @@ fun PlanetsScreenContent(
             )
             // add transformable to listen to multitouch transformation events
             // after offset
-            .transformable(state = state)
             .background(Color(0xFFDEDEF8))
             .fillMaxSize()
     )
     {
-        Box{
+        Card{
             Row() {
                 Row(
                     modifier = Modifier.border(
@@ -143,7 +126,8 @@ fun PlanetsScreenContent(
             LazyColumn(
                 modifier = Modifier
                     .align(
-                        alignment = Alignment.TopStart
+//                        alignment = Alignment.TopStart
+                        alignment = Alignment.Start
                     )
                     .padding(top = 24.dp, start = 24.dp, end = 4.dp)
             ) {
@@ -158,6 +142,7 @@ fun PlanetsScreenContent(
                                 fontSize = 16.sp,
                                 modifier = Modifier
                                     .background(Color(0xFFE6E9FD))
+                                    .fillMaxWidth(0.5f)
                             )
                             Spacer(Modifier.height(3.dp))
                             Text(
@@ -195,7 +180,7 @@ fun PlanetsScreenContent(
                                         textAlign = TextAlign.Center,
                                         modifier = Modifier
                                             .background(Color(0xFFE6E9FD))
-                                            .fillMaxWidth(0.4f)
+                                            .fillMaxWidth(0.5f)
 //                                            .padding(4.dp)
                                     )
                                 }
@@ -222,8 +207,8 @@ fun PlanetsScreenContent(
                                         textAlign = TextAlign.Start,
                                         modifier = Modifier
                                             .background(Color(0xFFE6E9FD))
-                                            .fillMaxWidth(0.6f)
-                                            .padding(start = 24.dp)
+                                            .fillMaxWidth(0.7f)
+                                            .padding(start = 18.dp)
                                     )
                                 }
                             }
@@ -232,8 +217,8 @@ fun PlanetsScreenContent(
                     Spacer(Modifier.height(8.dp))
 
                 }
-
             }
+
         }
     }
 
