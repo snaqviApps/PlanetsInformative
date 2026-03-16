@@ -1,6 +1,6 @@
 package create.develop.planetsdemo.data
 
-data class Planets(
+data class Planet(
     val position: String,
     val name: String,
     val velocity: String,
