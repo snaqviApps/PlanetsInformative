@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
             PlanetsDemoTheme {
                 Scaffold(modifier = Modifier) { innerPadding ->
                     LoadingScreen(
-                        modifier = innerPadding as Modifier
+                        modifier = Modifier
                     )
                 }
             }
