@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import create.develop.planetsdemo.data.PlanetsUIState
 import create.develop.planetsdemo.data.LocalFilePlanetsService
-import create.develop.planetsdemo.data.PlanetsInfoItem
 import create.develop.planetsdemo.domain.PlanetsService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -19,11 +18,7 @@ class MainViewModel(
     context: Context
 ) : ViewModel() {
     private val fetchPlanets: PlanetsService = LocalFilePlanetsService(context)
-    private val _state = MutableStateFlow<PlanetsUIState>(
-        PlanetsUIState(
-            isLoading = true, emptyList()
-        )
-    )
+    private val _state = MutableStateFlow<PlanetsUIState>(PlanetsUIState())
     val state = _state.asStateFlow()
 
     init {
@@ -33,9 +28,7 @@ class MainViewModel(
     private fun preparePlanetsData() {
         viewModelScope.launch(Dispatchers.IO) {
             _state.update {
-                PlanetsUIState(
-                    listOfPlanets = emptyList<PlanetsInfoItem>()
-                )
+                PlanetsUIState()
             }
             delay(2.seconds)
             val result = fetchPlanets.fetchPlanets()

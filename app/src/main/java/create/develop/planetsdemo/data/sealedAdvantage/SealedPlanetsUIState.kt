@@ -1,8 +1,8 @@
 package create.develop.planetsdemo.data.sealedAdvantage
 
-import create.develop.planetsdemo.data.Planet
-
-sealed interface SealedPlanetsUIState {
-    val listOfPlanets: List<Planet>
+sealed interface PlanetsResult {
+    object Empty : PlanetsResult
+    class Loading(val isLoading: Boolean = true) : PlanetsResult
+    data class Success(val listOfPlanets: SealedPlanetsInfo) : PlanetsResult
+    data class Error(val message: String) : PlanetsResult
 }
-

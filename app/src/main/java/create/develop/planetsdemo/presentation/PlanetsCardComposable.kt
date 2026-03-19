@@ -27,13 +27,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import create.develop.planetsdemo.R
+import create.develop.planetsdemo.data.PlanetsInfo
 import create.develop.planetsdemo.data.PlanetsInfoItem
 import create.develop.planetsdemo.ui.theme.PlanetsDemoTheme
 
 @Composable
 fun PlanetsCard(
     modifier: Modifier = Modifier,
-    listOfPlanets: List<PlanetsInfoItem>,
+    listOfPlanets: PlanetsInfo,
     planetCount: Int
 ) {
     Card(

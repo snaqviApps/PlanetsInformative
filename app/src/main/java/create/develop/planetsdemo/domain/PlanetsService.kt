@@ -1,7 +1,7 @@
 package create.develop.planetsdemo.domain
 
-import create.develop.planetsdemo.data.PlanetsInfoItem
+import create.develop.planetsdemo.data.PlanetsInfo
 
 interface PlanetsService {
-    suspend fun fetchPlanets() : List<PlanetsInfoItem>
+    suspend fun fetchPlanets() : PlanetsInfo
 }
