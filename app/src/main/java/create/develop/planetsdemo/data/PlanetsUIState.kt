@@ -1,7 +1,6 @@
 package create.develop.planetsdemo.data
 
-import create.develop.planetsdemo.data.sealedapproach.SealedPlanetsInfoItem
-
 data class PlanetsUIState(
-    val listOfPlanets: List<SealedPlanetsInfoItem>
+    val isLoading: Boolean = true,
+    val listOfPlanets: PlanetsInfo = emptyList()
 )

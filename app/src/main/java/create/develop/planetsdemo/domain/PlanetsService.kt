@@ -1,7 +1,7 @@
 package create.develop.planetsdemo.domain
 
-import create.develop.planetsdemo.data.sealedapproach.SealedPlanetsInfoItem
+import create.develop.planetsdemo.data.PlanetsInfo
 
 interface PlanetsService {
-    suspend fun fetchPlanets() : List<SealedPlanetsInfoItem>
+    suspend fun fetchPlanets() : PlanetsInfo
 }
