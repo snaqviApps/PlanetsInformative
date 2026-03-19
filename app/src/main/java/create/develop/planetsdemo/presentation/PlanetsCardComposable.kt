@@ -4,7 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -27,25 +27,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import create.develop.planetsdemo.R
-import create.develop.planetsdemo.data.sealedapproach.SealedPlanetsInfoItem
+import create.develop.planetsdemo.data.PlanetsInfoItem
 import create.develop.planetsdemo.ui.theme.PlanetsDemoTheme
 
 @Composable
 fun PlanetsCard(
-    modifier: Modifier,
-    listOfPlanets: List<SealedPlanetsInfoItem>,
+    modifier: Modifier = Modifier,
+    listOfPlanets: List<PlanetsInfoItem>,
     planetCount: Int
 ) {
     Card(
-        elevation = CardDefaults.elevatedCardElevation(20.dp),
-        modifier = modifier.padding(10.dp)
-    )
-    {
+        elevation = CardDefaults.elevatedCardElevation(12.dp),
+        modifier = modifier
+            .padding(10.dp)
+            .fillMaxWidth()
+    ) {
         Row(
-            modifier = modifier
+            modifier = Modifier
                 .padding(top = 16.dp, start = 12.dp, bottom = 8.dp, end = 8.dp)
                 .clip(RectangleShape)
-                .fillMaxSize()
+                .fillMaxWidth()
                 .align(alignment = Alignment.Start)
         ) {
             Column {
@@ -54,8 +55,7 @@ fun PlanetsCard(
             }
 
             Spacer(Modifier.width(12.dp))
-            Column(
-            ) {
+            Column {
                 Text(
                     text = listOfPlanets[planetCount].name,
                     fontWeight = FontWeight.SemiBold,
@@ -64,35 +64,29 @@ fun PlanetsCard(
                     modifier = Modifier.background(Color(0xFFE6E9FD))
                 )
 
-                Spacer(Modifier.width(8.dp))
+                Spacer(Modifier.height(8.dp))
                 Column {
-                    Column {
-                        Row {
-                            Text(
-                                text = "Distance:   ${listOfPlanets[planetCount].distance} MKm",
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Bold,
-                                textAlign = TextAlign.Center,
-                                color = Color(0xFF7B123C),
-                                modifier = Modifier
-                                    .background(Color(0xFFE6E9FD))
-                                    .padding(4.dp)
-                            )
-                        }
-                        Row(
-                        ) {
-                            Text(
-                                text = "Velocity:   ${listOfPlanets[planetCount].velocity.toInt() * 3600 - (1000)} Km/hr ",
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Bold,
-                                textAlign = TextAlign.Center,
-                                color = Color(0xFF7B123C),
-                                modifier = Modifier
-                                    .background(Color(0xFFE6E9FD))
-                                    .padding(4.dp)
-                            )
-                        }
-                    }
+                    Text(
+                        text = "Distance:   ${listOfPlanets[planetCount].distance} MKm",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        color = Color(0xFF7B123C),
+                        modifier = Modifier
+                            .background(Color(0xFFE6E9FD))
+                            .padding(4.dp)
+                    )
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        text = "Velocity:   ${listOfPlanets[planetCount].velocity.toInt() * 3600 - (1000)} Km/hr ",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        color = Color(0xFF7B123C),
+                        modifier = Modifier
+                            .background(Color(0xFFE6E9FD))
+                            .padding(4.dp)
+                    )
                 }
             }
         }
@@ -100,7 +94,6 @@ fun PlanetsCard(
 }
 
 
-@OptIn(ExperimentalSubclassOptIn::class)
 @Composable
 private fun FetchImage(image: String) {
     AsyncImage(
@@ -115,11 +108,11 @@ private fun FetchImage(image: String) {
 @Preview(showBackground = true)
 @Composable
 fun PlanetsCardPreview() {
-    PlanetsDemoTheme() {
+    PlanetsDemoTheme {
         PlanetsCard(
             Modifier,
             listOfPlanets = listOf(
-                SealedPlanetsInfoItem(
+                PlanetsInfoItem(
                     position = "1",
                     name = "Mercury",
                     velocity = "47",

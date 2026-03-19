@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.data.sealedapproach
+package create.develop.planetsdemo.data.sealedAdvantage
 
 import kotlinx.serialization.Serializable
 

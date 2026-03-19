@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -17,9 +19,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PlanetsDemoTheme {
-                Scaffold(modifier = Modifier) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     LoadingScreen(
                         modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding)
                     )
                 }
             }
@@ -31,6 +35,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun LoadingScreenPreview() {
     PlanetsDemoTheme {
-        LoadingScreen(modifier = Modifier)
+        LoadingScreen(modifier = Modifier.fillMaxSize())
     }
 }

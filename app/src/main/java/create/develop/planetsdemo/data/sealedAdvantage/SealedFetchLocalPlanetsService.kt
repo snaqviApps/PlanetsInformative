@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.data.sealedapproach
+package create.develop.planetsdemo.data.sealedAdvantage
 
 import android.content.Context
 import kotlinx.serialization.json.Json

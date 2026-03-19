@@ -1,4 +1,5 @@
-package create.develop.planetsdemo.data.sealedapproach
+package create.develop.planetsdemo.data.sealedAdvantage
+
 
 interface SealedPlanetsService {
     suspend fun fetchPlanets() : List<SealedPlanetsInfoItem>
