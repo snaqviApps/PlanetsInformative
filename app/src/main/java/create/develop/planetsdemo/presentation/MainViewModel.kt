@@ -3,8 +3,11 @@ package create.develop.planetsdemo.presentation
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import create.develop.planetsdemo.data.PlanetsUIState
-import create.develop.planetsdemo.data.LocalFilePlanetsService
+import create.develop.planetsdemo.data.plain.PlanetsUIState
+import create.develop.planetsdemo.data.plain.LocalFilePlanetsService
+import create.develop.planetsdemo.data.sealedAdvantage.PlanetsResult
+import create.develop.planetsdemo.data.sealedAdvantage.SealedFetchLocalPlanetsService
+import create.develop.planetsdemo.data.sealedAdvantage.SealedPlanetsService
 import create.develop.planetsdemo.domain.PlanetsService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -18,8 +21,13 @@ class MainViewModel(
     context: Context
 ) : ViewModel() {
     private val fetchPlanets: PlanetsService = LocalFilePlanetsService(context)
+    private val fetchPlanetsSealed: SealedPlanetsService = SealedFetchLocalPlanetsService(context)
+
     private val _state = MutableStateFlow<PlanetsUIState>(PlanetsUIState())
     val state = _state.asStateFlow()
+
+    private val _sealedState = MutableStateFlow<PlanetsResult>(PlanetsResult.Empty)
+    val sealedState = _sealedState.asStateFlow()
 
     init {
         preparePlanetsData()
@@ -39,6 +47,6 @@ class MainViewModel(
                 )
             }
         }
-    }
 
+    }
 }

@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.data
+package create.develop.planetsdemo.data.plain
 
 data class PlanetsUIState(
     val isLoading: Boolean = true,
