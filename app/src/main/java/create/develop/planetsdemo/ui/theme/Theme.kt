@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.ui.theme
+package create.develop.planetsinformative.ui.theme
 
 import android.app.Activity
 import android.os.Build

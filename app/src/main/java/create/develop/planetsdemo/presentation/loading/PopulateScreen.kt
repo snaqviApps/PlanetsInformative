@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.presentation.loading
+package create.develop.planetsinformative.presentation.loading
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -6,8 +6,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import create.develop.planetsdemo.presentation.MainViewModel
-import create.develop.planetsdemo.presentation.PlanetsScreenContent
+import create.develop.planetsinformative.presentation.MainViewModel
+import create.develop.planetsinformative.presentation.PlanetsScreenContent
 
 @Composable
 fun PopulateScreen(

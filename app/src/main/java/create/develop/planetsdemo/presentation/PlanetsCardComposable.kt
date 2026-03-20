@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.presentation
+package create.develop.planetsinformative.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -26,10 +26,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import create.develop.planetsdemo.R
-import create.develop.planetsdemo.data.plain.PlanetsInfo
-import create.develop.planetsdemo.data.plain.PlanetsInfoItem
-import create.develop.planetsdemo.ui.theme.PlanetsDemoTheme
+import create.develop.planetsinformative.R
+import create.develop.planetsinformative.data.plain.PlanetsInfo
+import create.develop.planetsinformative.data.plain.PlanetsInfoItem
+import create.develop.planetsinformative.ui.theme.PlanetsDemoTheme
 
 @Composable
 fun PlanetsCard(

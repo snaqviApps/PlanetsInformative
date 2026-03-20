@@ -1,14 +1,14 @@
-package create.develop.planetsdemo.presentation
+package create.develop.planetsinformative.presentation
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import create.develop.planetsdemo.data.plain.PlanetsUIState
-import create.develop.planetsdemo.data.plain.LocalFilePlanetsService
-import create.develop.planetsdemo.data.sealedAdvantage.PlanetsResult
-import create.develop.planetsdemo.data.sealedAdvantage.SealedFetchLocalPlanetsService
-import create.develop.planetsdemo.data.sealedAdvantage.SealedPlanetsService
-import create.develop.planetsdemo.domain.PlanetsService
+import create.develop.planetsinformative.data.plain.PlanetsUIState
+import create.develop.planetsinformative.data.plain.LocalFilePlanetsService
+import create.develop.planetsinformative.data.sealedAdvantage.PlanetsResult
+import create.develop.planetsinformative.data.sealedAdvantage.SealedFetchLocalPlanetsService
+import create.develop.planetsinformative.data.sealedAdvantage.SealedPlanetsService
+import create.develop.planetsinformative.domain.PlanetsService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow

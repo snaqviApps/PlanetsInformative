@@ -1,6 +1,6 @@
-package create.develop.planetsdemo.domain
+package create.develop.planetsinformative.domain
 
-import create.develop.planetsdemo.data.plain.PlanetsInfo
+import create.develop.planetsinformative.data.plain.PlanetsInfo
 
 interface PlanetsService {
     suspend fun fetchPlanets() : PlanetsInfo

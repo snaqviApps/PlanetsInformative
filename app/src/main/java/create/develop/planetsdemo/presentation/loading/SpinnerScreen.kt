@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.presentation.loading
+package create.develop.planetsinformative.presentation.loading
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

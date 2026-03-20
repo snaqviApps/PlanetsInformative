@@ -1,3 +1,3 @@
-package create.develop.planetsdemo.data.plain
+package create.develop.planetsinformative.data.plain
 
 typealias PlanetsInfo = List<PlanetsInfoItem>

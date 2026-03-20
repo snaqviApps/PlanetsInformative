@@ -1,10 +1,10 @@
-package create.develop.planetsdemo.presentation
+package create.develop.planetsinformative.presentation
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import create.develop.planetsdemo.data.plain.PlanetsInfo
+import create.develop.planetsinformative.data.plain.PlanetsInfo
 
 @Composable
 fun PlanetsScreenContent(

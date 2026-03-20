@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.data.sealedAdvantage
+package create.develop.planetsinformative.data.sealedAdvantage
 
 
 interface SealedPlanetsService {

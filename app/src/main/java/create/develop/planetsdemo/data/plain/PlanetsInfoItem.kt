@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.data.plain
+package create.develop.planetsinformative.data.plain
 
 import kotlinx.serialization.Serializable
 

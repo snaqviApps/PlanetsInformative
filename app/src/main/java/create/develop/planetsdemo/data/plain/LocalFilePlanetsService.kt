@@ -1,8 +1,8 @@
-package create.develop.planetsdemo.data.plain
+package create.develop.planetsinformative.data.plain
 
 import android.content.Context
 
-import create.develop.planetsdemo.domain.PlanetsService
+import create.develop.planetsinformative.domain.PlanetsService
 import kotlinx.serialization.json.Json
 
 class LocalFilePlanetsService(
