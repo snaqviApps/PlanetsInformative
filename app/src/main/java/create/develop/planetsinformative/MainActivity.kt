@@ -10,7 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import create.develop.planetsinformative.presentation.loading.LoadingScreen
+import create.develop.planetsinformative.presentation.screen.loading.LoadingScreen
 import create.develop.planetsinformative.ui.theme.PlanetsInformativeTheme
 
 class MainActivity : ComponentActivity() {

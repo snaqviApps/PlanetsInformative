@@ -1,14 +1,15 @@
-package create.develop.planetsinformative.presentation.loading
+package create.develop.planetsinformative.presentation.screen.loading
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import create.develop.planetsinformative.presentation.screen.PlanetsScreen
 
 @Composable
 fun LoadingScreen(
     modifier: Modifier = Modifier,
 ) {
-    PopulateScreen(modifier)
+    PlanetsScreen(modifier)
 }
 
 @Preview(showBackground = true)

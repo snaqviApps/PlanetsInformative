@@ -1,18 +1,17 @@
-package create.develop.planetsinformative.presentation.loading
+package create.develop.planetsinformative.presentation.screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import create.develop.planetsinformative.presentation.MainViewModel
 import create.develop.planetsinformative.presentation.PlanetsScreenContent
 
 @Composable
-fun PopulateScreen(
+fun PlanetsScreen(
     modifier: Modifier = Modifier,
-    viewModel: MainViewModel = MainViewModel(LocalContext.current)
+    viewModel: MainViewModel = MainViewModel()
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     when (state.isLoading) {
@@ -32,6 +31,6 @@ fun PopulateScreen(
 
 @Preview(showBackground = true)
 @Composable
-fun PopulateScreenPreview() {
-    PopulateScreen()
+fun PlanetsScreenPreview() {
+    PlanetsScreen()
 }
