@@ -27,15 +27,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import create.develop.planetsdemo.R
-import create.develop.planetsdemo.data.PlanetsInfo
-import create.develop.planetsdemo.data.PlanetsInfoItem
+//import create.develop.planetsdemo.R
 import create.develop.planetsdemo.ui.theme.PlanetsDemoTheme
 
 @Composable
 fun PlanetsCard(
     modifier: Modifier = Modifier,
-    listOfPlanets: PlanetsInfo,
-    planetCount: Int
+    name: String,
+    distance: String,
+    velocity: String,
+    image: String
 ) {
     Card(
         elevation = CardDefaults.elevatedCardElevation(12.dp),
@@ -51,14 +52,13 @@ fun PlanetsCard(
                 .align(alignment = Alignment.Start)
         ) {
             Column {
-                FetchImage(listOfPlanets[planetCount].image)
+                FetchImage(image)
                 Spacer(Modifier.height(8.dp))
             }
-
             Spacer(Modifier.width(12.dp))
             Column {
                 Text(
-                    text = listOfPlanets[planetCount].name,
+                    text = name ,
                     fontWeight = FontWeight.SemiBold,
                     color = Color(0xFF176757),
                     fontSize = 16.sp,
@@ -68,7 +68,7 @@ fun PlanetsCard(
                 Spacer(Modifier.height(8.dp))
                 Column {
                     Text(
-                        text = "Distance:   ${listOfPlanets[planetCount].distance} MKm",
+                        text = "Distance:   $distance MKm",
                         fontSize = 10.sp,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
@@ -79,7 +79,7 @@ fun PlanetsCard(
                     )
                     Spacer(Modifier.height(4.dp))
                     Text(
-                        text = "Velocity:   ${listOfPlanets[planetCount].velocity.toInt() * 3600 - (1000)} Km/hr ",
+                        text = "Velocity:   ${velocity.toInt() * 3600 - (1000)} Km/hr ",
                         fontSize = 10.sp,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
@@ -112,17 +112,10 @@ fun PlanetsCardPreview() {
     PlanetsDemoTheme {
         PlanetsCard(
             Modifier,
-            listOfPlanets = listOf(
-                PlanetsInfoItem(
-                    position = "1",
                     name = "Mercury",
                     velocity = "47",
                     distance = "58",
                     image = "https://space-facts.com/wp-content/uploads/mercury-transparent.png",
-                    description = "Mercury is the closest planet to the Sun and due to its proximity it is not easily seen except during twilight. For every two orbits of the Sun, Mercury completes three rotations about its axis and up until 1965 it was thought that the same side of Mercury constantly faced the Sun. Thirteen times a century Mercury can be observed from the Earth passing across the face of the Sun in an event called a transit, the next will occur on the 9th May 2016.",
-                )
-            ),
-            0
         )
     }
 }

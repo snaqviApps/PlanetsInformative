@@ -22,8 +22,10 @@ fun PopulateScreen(
         false -> {
             PlanetsScreenContent(
                 modifier,
-                listOfPlanets = state.listOfPlanets,
+                planets = state.planets,
             )
+            // empty
+            // null is error, new composable
         }
     }
 }
