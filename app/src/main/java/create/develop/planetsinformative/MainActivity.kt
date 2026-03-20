@@ -1,4 +1,4 @@
-package create.develop.planetsdemo
+package create.develop.PlanetsInformative
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,15 +10,15 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import create.develop.planetsdemo.presentation.loading.LoadingScreen
-import create.develop.planetsdemo.ui.theme.PlanetsDemoTheme
+import create.develop.planetsinformative.presentation.loading.LoadingScreen
+import create.develop.planetsinformative.ui.theme.PlanetsInformativeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            PlanetsDemoTheme {
+            PlanetsInformativeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     LoadingScreen(
                         modifier = Modifier
@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun LoadingScreenPreview() {
-    PlanetsDemoTheme {
+    PlanetsInformativeTheme {
         LoadingScreen(modifier = Modifier.fillMaxSize())
     }
 }

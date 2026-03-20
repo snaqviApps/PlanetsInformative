@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.ui.theme
+package create.develop.planetsinformative.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

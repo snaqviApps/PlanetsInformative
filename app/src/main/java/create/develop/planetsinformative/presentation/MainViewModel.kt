@@ -1,12 +1,12 @@
-package create.develop.planetsdemo.presentation
+package create.develop.planetsinformative.presentation
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import create.develop.planetsdemo.data.PlanetsUIState
-import create.develop.planetsdemo.data.LocalFilePlanetsService
-import create.develop.planetsdemo.data.PlanetsInfo
-import create.develop.planetsdemo.domain.PlanetsService
+import create.develop.planetsinformative.data.PlanetsUIState
+import create.develop.planetsinformative.data.LocalFilePlanetsService
+import create.develop.planetsinformative.data.PlanetsInfo
+import create.develop.planetsinformative.domain.PlanetsService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow

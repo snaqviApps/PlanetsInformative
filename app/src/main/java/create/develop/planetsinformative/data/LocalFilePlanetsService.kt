@@ -1,15 +1,12 @@
-package create.develop.planetsdemo.data
+package create.develop.planetsinformative.data
 
 import android.content.Context
-
-import create.develop.planetsdemo.domain.PlanetsService
-
+import create.develop.planetsinformative.domain.PlanetsService
 import kotlinx.serialization.json.Json
 
 class LocalFilePlanetsService(
     private val context: Context
 ) : PlanetsService {
-    //    override suspend fun fetchPlanets() : List<Planet> {
     override suspend fun fetchPlanets(): List<PlanetsInfoItem> {
         val result = context.resources.assets.open("planets.json")
             .bufferedReader()

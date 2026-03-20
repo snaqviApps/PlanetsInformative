@@ -1,4 +1,4 @@
-package create.develop.planetsdemo.presentation
+package create.develop.planetsinformative.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -26,9 +26,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import create.develop.planetsdemo.R
-//import create.develop.planetsdemo.R
-import create.develop.planetsdemo.ui.theme.PlanetsDemoTheme
+import create.develop.planetsinformative.ui.theme.PlanetsInformativeTheme
+import create.develop.planetsinformative.R
 
 @Composable
 fun PlanetsCard(
@@ -109,7 +108,7 @@ private fun FetchImage(image: String) {
 @Preview(showBackground = true)
 @Composable
 fun PlanetsCardPreview() {
-    PlanetsDemoTheme {
+    PlanetsInformativeTheme {
         PlanetsCard(
             Modifier,
                     name = "Mercury",

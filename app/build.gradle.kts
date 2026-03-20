@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    namespace = "create.develop.planetsdemo"
+    namespace = "create.develop.planetsinformative"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "create.develop.planetsdemo"
+        applicationId = "create.develop.planetsinformative"
         minSdk = 25
         targetSdk = 36
         versionCode = 1
