@@ -5,12 +5,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import create.develop.planetsinformative.data.PlanetsInfoItem
+import create.develop.planetsinformative.data.PlanetsDto
 
 @Composable
 fun PlanetsScreenContent(
     modifier: Modifier = Modifier,
-    planets: List<PlanetsInfoItem>
+    planets: List<PlanetsDto>
 ) {
     LazyColumn(
         modifier = modifier.fillMaxSize()
