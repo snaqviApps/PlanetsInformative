@@ -8,5 +8,5 @@ interface PlanetsService {
 }
 
 interface PlanetsLocalService {
-    suspend fun fetchPlanetsLocalList() : List<PlanetsDto>
+    suspend fun fetchPlanetsLocalList() : List<PlanetsDto>?
 }

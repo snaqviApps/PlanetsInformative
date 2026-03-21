@@ -14,19 +14,32 @@ fun PlanetsScreen(
     viewModel: MainViewModel = MainViewModel()
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    when (state.isLoading) {
+
+    when(state.isLoading) {
         true -> {
             SpinnerScreen(modifier)
         }
-        false -> {
-            PlanetsScreenContent(
-                modifier,
-                planets = state.planets,
-            )
-            // empty
-            // null is error, new composable
-        }
+        false -> {}
     }
+
+    when(state.isEmpty) {
+        true -> {
+            EmptyScreen()
+        }
+        false -> Unit
+    }
+
+    when(state.isError) {
+        true -> {
+            ErrorScreen()
+        }
+        false -> Unit
+    }
+    PlanetsScreenContent(
+        modifier,
+        planets = state.planets,
+    )
+
 }
 
 @Preview(showBackground = true)

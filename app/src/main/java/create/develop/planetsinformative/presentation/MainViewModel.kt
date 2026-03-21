@@ -25,16 +25,36 @@ class MainViewModel() : ViewModel() {
 
     private fun preparePlanetsData() {
         viewModelScope.launch(Dispatchers.IO) {
-            _state.update {
-                PlanetsUIState()
-            }
-            delay(2.seconds)
-            val result = fetchLocalListPlanets.fetchPlanetsLocalList()
-            _state.value = PlanetsUIState(
-                isLoading = false,
-                planets = result
-            )
+            _state.value = PlanetsUIState(isLoading = true)
+            delay(3.seconds)
 
+            when((0..2).random()) {
+                0 -> {
+                    _state.update {  PlanetsUIState(
+                        isLoading = false,
+                        isEmpty = true
+                    )
+                }
+                    }
+                1 -> {
+                    val result = fetchLocalListPlanets.fetchPlanetsLocalList() ?: emptyList()
+                    _state.update {
+                        PlanetsUIState(
+                            isLoading = false,
+                            planets = result
+                        )
+                    }
+                }
+                2-> {
+                    _state.update {
+                        PlanetsUIState(
+                            isLoading = false,
+                            isError = true
+                        )
+                    }
+                }
+
+            }
         }
     }
 
