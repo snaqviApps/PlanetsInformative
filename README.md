@@ -5,11 +5,14 @@
 
 <table>
   <tr>
-
 <td>
+
+  
 <b>Empty Screen</b>
 <img alt="EmptyDataScreen" src="https://github.com/user-attachments/assets/3787af49-46a7-4a84-aa73-cbb4c3f06fe5" />
 </td>
+
+##
 <td> 
   <b>Error Screen</b>
     <img alt="errorScreen" src="https://github.com/user-attachments/assets/b708f7f2-9977-432f-8874-044ee8d02f63" />
