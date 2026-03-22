@@ -1,9 +1,9 @@
-package create.develop.planetsinformative.presentation.screen.loading
+package create.develop.planetsinformative.presentation.screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import create.develop.planetsinformative.presentation.screen.LoadPlanetsScreen
+import create.develop.planetsinformative.presentation.screen.loading.LoadPlanetsScreen
 
 @Composable
 fun PlanetsScreen(
