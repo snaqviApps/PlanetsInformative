@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Planets Informative</string>
     <string name="planetImage">Planet Image</string>
+    <string name="no_data_received">No Data Received</string>
 </resources>

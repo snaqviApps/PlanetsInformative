@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -18,24 +17,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
-import create.develop.planetsinformative.R
-import create.develop.planetsinformative.data.plain.PlanetsInfo
-import create.develop.planetsinformative.data.plain.PlanetsInfoItem
-import create.develop.planetsinformative.ui.theme.PlanetsDemoTheme
+import create.develop.planetsinformative.ui.theme.PlanetsInformativeTheme
+import create.develop.planetsinformative.presentation.screen.FetchImage
 
 @Composable
 fun PlanetsCard(
     modifier: Modifier = Modifier,
-    listOfPlanets: PlanetsInfo,
-    planetCount: Int
+    name: String,
+    distance: String,
+    velocity: String,
+    image: String
 ) {
     Card(
         elevation = CardDefaults.elevatedCardElevation(12.dp),
@@ -51,14 +47,13 @@ fun PlanetsCard(
                 .align(alignment = Alignment.Start)
         ) {
             Column {
-                FetchImage(listOfPlanets[planetCount].image)
+                FetchImage(image)
                 Spacer(Modifier.height(8.dp))
             }
-
             Spacer(Modifier.width(12.dp))
             Column {
                 Text(
-                    text = listOfPlanets[planetCount].name,
+                    text = name,
                     fontWeight = FontWeight.SemiBold,
                     color = Color(0xFF176757),
                     fontSize = 16.sp,
@@ -68,7 +63,7 @@ fun PlanetsCard(
                 Spacer(Modifier.height(8.dp))
                 Column {
                     Text(
-                        text = "Distance:   ${listOfPlanets[planetCount].distance} MKm",
+                        text = "Distance:   $distance MKm",
                         fontSize = 10.sp,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
@@ -79,7 +74,7 @@ fun PlanetsCard(
                     )
                     Spacer(Modifier.height(4.dp))
                     Text(
-                        text = "Velocity:   ${listOfPlanets[planetCount].velocity.toInt() * 3600 - (1000)} Km/hr ",
+                        text = "Velocity:   ${velocity.toInt() * 3600 - (1000)} Km/hr ",
                         fontSize = 10.sp,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
@@ -92,37 +87,18 @@ fun PlanetsCard(
             }
         }
     }
+
 }
-
-
-@Composable
-private fun FetchImage(image: String) {
-    AsyncImage(
-        model = image,
-        contentDescription = stringResource(R.string.planetImage),
-        placeholder = painterResource(R.drawable.solar),
-        modifier = Modifier
-            .size(70.dp, 75.dp),
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PlanetsCardPreview() {
-    PlanetsDemoTheme {
-        PlanetsCard(
-            Modifier,
-            listOfPlanets = listOf(
-                PlanetsInfoItem(
-                    position = "1",
-                    name = "Mercury",
-                    velocity = "47",
-                    distance = "58",
-                    image = "https://space-facts.com/wp-content/uploads/mercury-transparent.png",
-                    description = "Mercury is the closest planet to the Sun and due to its proximity it is not easily seen except during twilight. For every two orbits of the Sun, Mercury completes three rotations about its axis and up until 1965 it was thought that the same side of Mercury constantly faced the Sun. Thirteen times a century Mercury can be observed from the Earth passing across the face of the Sun in an event called a transit, the next will occur on the 9th May 2016.",
-                )
-            ),
-            0
-        )
+    @Preview(showBackground = true)
+    @Composable
+    fun PlanetsCardPreview() {
+        PlanetsInformativeTheme {
+            PlanetsCard(
+                Modifier,
+                name = "Mercury",
+                velocity = "47",
+                distance = "58",
+                image = "https://space-facts.com/wp-content/uploads/mercury-transparent.png",
+            )
+        }
     }
-}

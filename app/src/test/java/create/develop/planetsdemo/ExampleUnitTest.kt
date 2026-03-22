@@ -1,4 +1,4 @@
-package create.develop.planetsinformative
+package create.develop.PlanetsInformative
 
 import org.junit.Test
 
