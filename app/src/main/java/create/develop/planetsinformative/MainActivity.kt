@@ -1,4 +1,4 @@
-package create.develop.PlanetsInformative
+package create.develop.planetsinformative
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import create.develop.planetsinformative.presentation.screen.loading.LoadingScreen
+import create.develop.planetsinformative.presentation.screen.loading.PlanetsScreen
 import create.develop.planetsinformative.ui.theme.PlanetsInformativeTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             PlanetsInformativeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    LoadingScreen(
+                    PlanetsScreen(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding)
@@ -33,8 +33,8 @@ class MainActivity : ComponentActivity() {
 
 @Preview(showBackground = true)
 @Composable
-fun LoadingScreenPreview() {
+fun PlanetsScreenPreview() {
     PlanetsInformativeTheme {
-        LoadingScreen(modifier = Modifier.fillMaxSize())
+        PlanetsScreen(modifier = Modifier.fillMaxSize())
     }
 }

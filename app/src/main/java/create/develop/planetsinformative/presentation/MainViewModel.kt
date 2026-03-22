@@ -2,8 +2,8 @@ package create.develop.planetsinformative.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import create.develop.planetsinformative.data.PlanetsUIState
 import create.develop.planetsinformative.data.LocalListReadService
+import create.develop.planetsinformative.data.PlanetsUIState
 import create.develop.planetsinformative.domain.PlanetsLocalService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
 
 class MainViewModel() : ViewModel() {
-    private val fetchLocalListPlanets: PlanetsLocalService = LocalListReadService()
+    private val planetsLocalService: PlanetsLocalService = LocalListReadService()
     private val _state = MutableStateFlow<PlanetsUIState>(PlanetsUIState())
 
     val state = _state.asStateFlow()
@@ -37,7 +37,7 @@ class MainViewModel() : ViewModel() {
                 }
                     }
                 1 -> {
-                    val result = fetchLocalListPlanets.fetchPlanetsLocalList() ?: emptyList()
+                    val result = planetsLocalService.fetchPlanetsLocalList() ?: emptyList()
                     _state.update {
                         PlanetsUIState(
                             isLoading = false,
@@ -53,7 +53,6 @@ class MainViewModel() : ViewModel() {
                         )
                     }
                 }
-
             }
         }
     }

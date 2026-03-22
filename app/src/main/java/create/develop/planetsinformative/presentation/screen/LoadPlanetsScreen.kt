@@ -9,7 +9,7 @@ import create.develop.planetsinformative.presentation.MainViewModel
 import create.develop.planetsinformative.presentation.PlanetsScreenContent
 
 @Composable
-fun PlanetsScreen(
+fun LoadPlanetsScreen(
     modifier: Modifier = Modifier,
     viewModel: MainViewModel = MainViewModel()
 ) {
@@ -45,5 +45,5 @@ fun PlanetsScreen(
 @Preview(showBackground = true)
 @Composable
 fun PlanetsScreenPreview() {
-    PlanetsScreen()
+    LoadPlanetsScreen(modifier = Modifier)
 }
