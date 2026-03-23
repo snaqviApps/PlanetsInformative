@@ -1,6 +1,4 @@
 package create.develop.planetsinformative.data
 
-import kotlinx.serialization.Serializable
+typealias PlanetsInfo = ArrayList<PlanetsInfoItem>
 
-@Serializable
-class PlanetsInfo : ArrayList<PlanetsInfoItem>()

@@ -1,8 +1,8 @@
 package create.develop.planetsinformative.data
 
-import create.develop.planetsinformative.domain.PlanetsLocalService
+import create.develop.planetsinformative.domain.LocalListPlanetsService
 
-class LocalListReadService() : PlanetsLocalService {
+class LocalListReadService() : LocalListPlanetsService {
     override suspend fun fetchPlanetsLocalList(): List<PlanetsDto> {
             return listOf(
                 PlanetsDto(

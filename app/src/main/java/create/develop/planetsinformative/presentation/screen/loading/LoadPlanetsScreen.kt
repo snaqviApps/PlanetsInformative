@@ -3,10 +3,11 @@ package create.develop.planetsinformative.presentation.screen.loading
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import create.develop.planetsinformative.presentation.MainViewModel
-import create.develop.planetsinformative.presentation.PlanetsScreenContent
+import create.develop.planetsinformative.presentation.screen.PlanetsScreenContent
 import create.develop.planetsinformative.presentation.screen.EmptyScreen
 import create.develop.planetsinformative.presentation.screen.ErrorScreen
 import create.develop.planetsinformative.presentation.screen.SpinnerScreen
@@ -14,7 +15,7 @@ import create.develop.planetsinformative.presentation.screen.SpinnerScreen
 @Composable
 fun LoadPlanetsScreen(
     modifier: Modifier = Modifier,
-    viewModel: MainViewModel = MainViewModel()
+    viewModel: MainViewModel = MainViewModel(LocalContext.current)
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 

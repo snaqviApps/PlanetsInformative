@@ -1,4 +1,4 @@
-package create.develop.planetsinformative.presentation
+package create.develop.planetsinformative.presentation.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -23,7 +23,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import create.develop.planetsinformative.ui.theme.PlanetsInformativeTheme
-import create.develop.planetsinformative.presentation.screen.FetchImage
 
 @Composable
 fun PlanetsCard(

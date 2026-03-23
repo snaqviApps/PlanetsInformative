@@ -1,10 +1,13 @@
 package create.develop.planetsinformative.presentation
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import create.develop.planetsinformative.data.LocalFilePlanetsService
 import create.develop.planetsinformative.data.LocalListReadService
 import create.develop.planetsinformative.data.PlanetsUIState
-import create.develop.planetsinformative.domain.PlanetsLocalService
+import create.develop.planetsinformative.data.toPlanetsDto
+import create.develop.planetsinformative.domain.PlanetsService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,8 +16,9 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
 
-class MainViewModel() : ViewModel() {
-    private val planetsLocalService: PlanetsLocalService = LocalListReadService()
+class MainViewModel(context: Context) : ViewModel() {
+    private val localFilePlanetsService: PlanetsService = LocalFilePlanetsService(context)
+    private val localListReadService: LocalListReadService = LocalListReadService()
     private val _state = MutableStateFlow<PlanetsUIState>(PlanetsUIState())
 
     val state = _state.asStateFlow()
@@ -25,7 +29,9 @@ class MainViewModel() : ViewModel() {
 
     private fun preparePlanetsData() {
         viewModelScope.launch(Dispatchers.IO) {
-            _state.value = PlanetsUIState(isLoading = true)
+            _state.value = PlanetsUIState(
+                isLoading = true,
+                planets = emptyList())
             delay(3.seconds)
 
             when((0..2).random()) {
@@ -37,11 +43,14 @@ class MainViewModel() : ViewModel() {
                 }
                     }
                 1 -> {
-                    val result = planetsLocalService.fetchPlanetsLocalList() ?: emptyList()
+                    val result = localFilePlanetsService.fetchPlanets()
+                    val resultLocalList = localListReadService.fetchPlanetsLocalList()
+
                     _state.update {
                         PlanetsUIState(
                             isLoading = false,
-                            planets = result
+                            planets = result.map { it.toPlanetsDto() }              // reading from file: planets.json
+//                            planets = resultLocalList                             // reading from local list
                         )
                     }
                 }

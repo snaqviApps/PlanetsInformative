@@ -1,4 +1,4 @@
-package create.develop.planetsinformative.presentation
+package create.develop.planetsinformative.presentation.screen
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
