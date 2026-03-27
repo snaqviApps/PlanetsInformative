@@ -29,9 +29,8 @@ class MainViewModel(context: Context) : ViewModel() {
 
     private fun preparePlanetsData() {
         viewModelScope.launch(Dispatchers.IO) {
-            _state.value = PlanetsUIState(
-                isLoading = true,
-                planets = emptyList())
+
+            _state.value = PlanetsUIState()
             delay(3.seconds)
 
             when((0..2).random()) {
@@ -49,8 +48,8 @@ class MainViewModel(context: Context) : ViewModel() {
                     _state.update {
                         PlanetsUIState(
                             isLoading = false,
-                            planets = result.map { it.toPlanetsDto() }              // reading from file: planets.json
-//                            planets = resultLocalList                             // reading from local list
+//                            planets = result.map { it.toPlanetsDto() }              // reading from file: planets.json
+                            planets = resultLocalList                             // reading from local list
                         )
                     }
                 }
